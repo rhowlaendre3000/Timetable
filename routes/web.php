@@ -63,6 +63,12 @@ Route::group(['middleware'=>['auth','web']], function(){
         }
     });
 
+    Route::get('/dash', function(){
+
+
+        return view('users.dashboard');
+    });
+
 });
 
 //Route::get('/hire', 'hireController@index');

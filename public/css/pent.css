@@ -3,7 +3,7 @@ background-color: #5c696e;
 color: white;
 }
 .bg-color2{
-    background-color: #63c2de;
+    background-color: #0186a7;
     color: white;
 }
 .bg-color3{
@@ -13,6 +13,20 @@ color: white;
 .bg-color4{
     background-color: darkviolet;
     color: white;
+}
+.bg-color5{
+    background-color: #1b7d7d;
+}
+.bg-color6{
+    background-color:#a41b25;
+}
+
+.container .card-header{
+    padding-bottom:0px;
+    padding-top:0.53em;
+}
+.container .card-header h5{
+    text-align: center;
 }
 
 .subbut{

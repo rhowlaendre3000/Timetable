@@ -53,25 +53,24 @@
                          
                         <li class="nav-item active" >
                                     <a class="nav-link" href="{{url('home')}}"><h5 style="color:white;">Dashboard</h5><span class="sr-only">(current)</span></a>
-                                </li>
-                                
+                        </li>
+                        
+                        <li class="nav-item active" >
+                                    <a class="nav-link" href="{{url('dash')}}"><h5 style="color:white;">Original Dashboard</h5><span class="sr-only">(current)</span></a>
+                        </li>
 
+                                
+                                @if(Auth::user()->admin==1)
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('programme/create') }}"><h5 style="padding-right: 10px; color:white;">Programmes</h5></a>
                                 </li>
-                                @if(Auth::user()->admin==1)
                                 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('course/create') }}"><h5 style="color:white;">Courses</h5></a>
-                                </li>
-                                
-
-                               
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('timetable/') }}"><h5 style="color:white;">Timetable</h5></a>
-                                </li>
+                                </li>                          
                                 @endif
+
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('timetable/') }}"><h5 style="color:white;">Timetable</h5></a>
                                 </li>
