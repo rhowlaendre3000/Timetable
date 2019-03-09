@@ -58,15 +58,19 @@ Route::group(['middleware'=>['auth','web']], function(){
         if(Auth::user()->admin==0){
             return view('home');
         }else{
-            $users['users']=\App\User::paginate(10);
-            return view('users.all', $users);
+            //$users['users']=\App\User::paginate(10);
+        return view('users.dashboard'/*, $users*/);
         }
     });
 
-    Route::get('/dash', function(){
-
+    Route::get('dash', function(){
 
         return view('users.dashboard');
+    });
+    Route::get('/all', function(){
+        $users['users']=\App\User::paginate(10);
+
+        return view('users.all',$users);
     });
 
 });

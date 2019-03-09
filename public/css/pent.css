@@ -16,9 +16,11 @@ color: white;
 }
 .bg-color5{
     background-color: #1b7d7d;
+    color:white;
 }
 .bg-color6{
     background-color:#a41b25;
+    color:white;
 }
 
 .container .card-header{
@@ -27,6 +29,24 @@ color: white;
 }
 .container .card-header h5{
     text-align: center;
+}
+
+.progress{
+    margin-top:50px;
+    margin-left:-20px;
+    margin-right:-20px;
+}
+#butts{
+    padding-left:0px;
+    padding-right:0px;
+}
+#butts button{
+    width:105px;
+    padding-left:12px;
+}
+.card-body .progress-bar{
+    width:0%;
+   
 }
 
 .subbut{
