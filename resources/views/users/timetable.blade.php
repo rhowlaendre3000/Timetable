@@ -55,7 +55,7 @@
 							<tr>
 								
 								<th>Course</th>
-								<th>Course Code</th>
+								<th>Course Codes</th>
                                 <th>Lecturer</th>
 								<th>Time</th>
 								<th>Venue</th>
