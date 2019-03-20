@@ -50,11 +50,15 @@
                             @endguest
                             
                           @auth
-                         
+                         @if(Auth::user()->admin==1)
                         <li class="nav-item active" >
                                     <a class="nav-link" href="{{url('dash')}}"><h5 style="color:white;">Dashboard</h5><span class="sr-only">(current)</span></a>
                         </li>
-                        
+                        @else
+                        <li class="nav-item active" >
+                                    <a class="nav-link" href="{{url('home')}}"><h5 style="color:white;">Dashboard</h5><span class="sr-only">(current)</span></a>
+                        </li>
+                        @endif
                        
 
                                 

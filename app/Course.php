@@ -25,4 +25,7 @@ class Course extends Model
         return $this->hasOne(Timetable::class);
     }
    
+    public function level(){
+        return $this->belongsTo(Level::class);
+    }
 }

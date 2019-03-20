@@ -38,6 +38,12 @@ class User extends Authenticatable
     }
 
     public function timetable(){
+        
         return $this->hasManyThrough(Timetable::class, Programme::class);
+    }
+
+
+    public function level(){
+        return $this->belongsTo(Level::class);
     }
 }

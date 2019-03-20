@@ -26,11 +26,11 @@
     		<h4><b>SOCIAL NETWROKS</b></h4>
         <div>
         <ul class="social">
-                <li><a href="#" class="rss" title="Rss"><i class="fa fa-rss"></i></a></li>
-                <li><a href="#" class="face" title="Facebook"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#" class="twit" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#" class="google" title="Google +"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#" class="linkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#" class="rss"   title="Rss"><i class="fa fa-rss" style="padding-top:20px"></i></a></li>
+                <li><a href="#" class="face" title="Facebook"><i class="fab fa-facebook" style="padding-top:20px"></i></a></li>
+                <li><a href="#" class="twit" title="Twitter"><i class="fab fa-twitter" style="padding-top:20px"></i></a></li>
+                <li><a href="#" class="google" title="Google +"><i class="fab fa-google-plus" style="padding-top:20px"></i></a></li>
+                <li><a href="#" class="linkedin" title="Linkedin"><i class="fab fa-linkedin" style="padding-top:20px"></i></a></li>
             </ul>        
             </div>
     </div>
@@ -42,7 +42,7 @@
 
 <div class="container-fluid">
 <div class="row" style="background-color:#0E0B16; padding:10px;">
-  	<h6 style="color:white;">All Rights Reserved © 2017 </h6>
+  	<h6 style="color:white;">All Rights Reserved © 2019 </h6>
   </div>
 
 </div>

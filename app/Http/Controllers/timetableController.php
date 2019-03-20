@@ -22,11 +22,15 @@ class timetableController extends Controller
     public function index()
     {
         //
-       // $coursetime=Course::find(Auth::user()->id);
+       
+       // $course=Course::all();
+      
         $users=User::find(Auth::user()->id);
         
-        return view('users.timetable')->with(compact('users'));
-                                     // ->with(compact('coursetime'));
+        
+
+        return view('users.timetable')->with(compact('users'))
+                                      ->with(compact('course'));
     }
 
     /**

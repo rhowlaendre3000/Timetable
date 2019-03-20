@@ -19,6 +19,17 @@
 <input type="email" name="email" class="form-control" id="email" required>
 </div>
 <div class="form-group">
+<label for="level">Level</label><em>*</em>
+<select type="text" name="level" class="form-control" id="programme" required>
+    <option>100</option>
+    <option>200</option>
+    <option>300</option>
+    <option>400</option>
+
+
+</select>
+</div>
+<div class="form-group">
 <label for="programme">Programme/Department</label><em>*</em>
 <select type="text" name="programme" class="form-control" id="programme" required>
         @foreach($programme as $programmes)

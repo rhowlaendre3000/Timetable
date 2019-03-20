@@ -4,7 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class level extends Model
+class Level extends Model
 {
     //
+
+ public function course(){
+     return $this->hasMany(Course::class);
+ }
+    
 }

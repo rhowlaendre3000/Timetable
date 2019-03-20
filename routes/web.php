@@ -37,6 +37,8 @@ Route::get('/proftest',function(){
 
 //Route::resource('/trains','trainsController')->middleware('auth');
 Route::resource('/tickets','ticketsController')->middleware('auth');
+
+Route::get('/userprofile','formController@profile');
 Route::resource('/index', 'formController');
 Route::resource('profiles', 'profilesController')->middleware('auth');
 //Route::resource('/routes', 'RouteController')->middleware('auth');

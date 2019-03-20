@@ -34,7 +34,7 @@
     			Available Programmes 
     	</div>
     		<div class="card-body">
-                <div class="table-responsive">
+                <div class="table">
                     <table class="table table-bordered">
                         <thead>
                               <tr>

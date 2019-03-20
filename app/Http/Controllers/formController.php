@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 use App\Programme;
 use App\Course;
 
@@ -22,7 +23,14 @@ class formController extends Controller
        // $this->middleware('auth', ['except' => ['create']]);
     }
 
-    
+    public function profile(){
+
+        $profile = User::find(Auth::user()->id);
+       return view('users.profile',compact('profile'));
+    }
+
+
+
     public function index($id)
     {
         //
@@ -57,7 +65,8 @@ class formController extends Controller
         $rules = [
             'name'     => 'required|min:4',
             'email'    => 'required|email|unique:users',
-            'programme'      =>  'required',
+            'level'    => 'required',
+            'programme'      => 'required',
             'studentid'=>  'required',
             'password' => 'required|string|min:6|confirmed',
             
@@ -89,6 +98,7 @@ class formController extends Controller
             }
             $user->name       = $request->input('name');
             $user->email      = $request->input('email');
+            $user->level      = $request->input('level');
             $user->programmename   = $request->input('programme');
             $user->studentid   = $request->input('studentid');
             $user->password    = $request->input('password');

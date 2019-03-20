@@ -21,6 +21,7 @@ class courseController extends Controller
     {
         //
         
+        
         return view('users.course', compact('course'));
     }
 
@@ -69,7 +70,7 @@ class courseController extends Controller
                 session()->flash('status', 'course '.$status.'d successfully');
                 return redirect(route('course.create'));
             }else{
-                $session()->flash('status', 'Unable to '.$status.'d successfully');
+                session()->flash('status', 'Unable to '.$status.'d successfully');
                 return back()->withInput();
             }
 
