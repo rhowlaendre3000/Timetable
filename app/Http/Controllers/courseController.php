@@ -33,7 +33,8 @@ class courseController extends Controller
     public function create()
     {
         //
-        return view('users.course');
+        $programme=Programme::all();
+        return view('users.course')->with(compact('programme'));
     }
 
     /**
@@ -61,10 +62,37 @@ class courseController extends Controller
 
             $course = new Course;
             
+
             $course->coursetitle=$request->input('title');
             $course->coursecode=$request->input('code');
             $course->lecturer=$request->input('lecturer');
-            $course->programme_id=Programme::all()->last()->id;
+
+            $course->programme_id=Programme::where('name','=',$request->input('programme'))->first()->id;
+
+
+           /* if($request->input('programme')=="Mathematics"){
+                    $course->programme_id=1;
+            }elseif($request->input('programme')=="Computer Science"){
+                    $course->programme_id=2;
+            }elseif($request->input('programme')=="Statistics"){
+                    $course->programme_id=3;
+            }elseif($request->input('programme')=="Economics"){
+                    $course->programme_id=4;
+            }
+            */
+
+
+           // $course->programme_id=Programme::all()->last()->id;
+
+            if(substr($course->coursecode,0,1)==1){
+                $course->level_id=1;
+            }elseif(substr($course->coursecode,0,1)==2){
+                $course->level_id=2;
+            }elseif(substr($course->coursecode,0,1)==3){
+                $course->level_id=3;
+            }elseif(substr($course->coursecode,0,1)==4){
+                $course->level_id=4;
+            }
 
             if($course->save()){
                 session()->flash('status', 'course '.$status.'d successfully');

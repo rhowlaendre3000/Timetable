@@ -27,8 +27,9 @@
 	  </div>
 		  <div class="card-body">
 			  
-			  <form method="post" action="">
+			  <form method="post" action="/timetable">
 			  {{ csrf_field() }}
+				@include('includes.datevenueform')
 			
 			  </form>
 				  

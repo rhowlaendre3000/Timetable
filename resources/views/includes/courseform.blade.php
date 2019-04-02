@@ -9,7 +9,14 @@
 @endif
 
 
-
+<div class="form-group">
+<label for="programme">Programme</label><em>*</em>
+<select type="text" name="programme" class="form-control" id="title" required>
+@foreach($programme as $programmes)
+    <option> {{ $programmes->name }}</option>
+    @endforeach
+</select>
+</div>
 <div class="form-group">
 <label for="name">Course Title</label><em>*</em>
 <input type="text" name="title" class="form-control" id="title" required>

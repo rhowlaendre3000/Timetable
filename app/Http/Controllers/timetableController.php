@@ -10,7 +10,7 @@ use App\User;
 use App\Timetable;
 use App\Course;
 use App\Programme;
-
+use Carbon\Carbon;
 
 class timetableController extends Controller
 {
@@ -73,9 +73,10 @@ class timetableController extends Controller
             $timetable = new Timetable;
 
 
-         
+            
+            $timetable->course_id=Course::where('coursetitle','=',$request->input('course'))->first()->id;
 
-            if($request->input('course')=="Algebrae and Trigonometry"){
+          /*  if($request->input('course')=="Algebrae and Trigonometry"){
                 $timetable->course_id=1;
             }elseif($request->input('course')=='Calculus I'){
                 $timetable->course_id=2;
@@ -90,13 +91,22 @@ class timetableController extends Controller
             elseif($request->input('course')=="Introduction to Statistics"){
                 $timetable->course_id=6;
             }
+            elseif($request->input('course')=="Micro Economics"){
+                $timetable->course_id=7;
+            }
+            elseif($request->input('course')=="Macro Economics"){
+                $timetable->course_id=8;
+            }
+            */
             
            // $course_id=$request->input('course');
            // $timetable->course_id= $request->input('course');
             $timetable->programme_id= Auth::user()->programme_id;
             $timetable->date=$request->input('date');
-            $timetable->timefrom=$request->input('timefrom');
-            $timetable->timeto=$request->input('timeto');
+            $timefrom=$request->input('timefrom');
+            $timetable->timefrom=Carbon::createFromFormat('H:i',$timefrom)->format('g:i a');
+            $timeto=$request->input('timeto');
+            $timetable->timeto=Carbon::createFromFormat('H:i',$timeto)->format('g:i a');
             $timetable->venue=$request->input('venue');
 
 
@@ -120,9 +130,9 @@ class timetableController extends Controller
     public function show($id)
     {
         //
-       
+       $users=User::find(Auth::user()->id);
         $programme=Programme::find($id);
-        return view('users.show')->with(compact('programme'));
+        return view('users.show')->with(compact('programme'))->with(compact('users'));
     }
 
     /**

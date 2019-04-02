@@ -11,7 +11,7 @@
 <div class="form-group">
 <label for="course">Course</label><em>*</em>
 <select type="text" name="course" class="form-control" id="course" required>
-    @foreach($users->programme->course as $courses)
+    @foreach($programme->course as $courses)
     <option> {{ $courses->coursetitle}} </option>
     @endforeach
 </select>

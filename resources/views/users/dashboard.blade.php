@@ -147,7 +147,7 @@
 
             <div class="col-sm-4 col-lg-4">
                             <div class="card bg-color6" style="height:13em;">
-                            <div class="card-header"><h5>Anything Later</h5></div>
+                            <div class="card-header"><h5>Report</h5></div>
         
     
   <div class="card-body">
@@ -155,10 +155,10 @@
 
     <div class="row" id="">
       <div class="col-sm-8">
-    <p class="card-text" style="color:white;"> Please <a href=" ">Click</a> whatever</p>
+    <p class="card-text" style="color:white;"> Displays Data <strong>Reports</strong> of the system</p>
 </div>
 <div class="col-sm-4" id="butts">
-    <button type="button"  class="btn btn-light">Light</button>
+<a href="{{ url('report') }}"> <button type="button"  class="btn btn-light"><i class="fas fa-chart-line"></i></button></a>
 </div>
   </div>
 

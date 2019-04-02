@@ -46,6 +46,7 @@ Route::resource('/programme', 'programmeController')->middleware('auth');
 Route::resource('/course', 'courseController')->middleware('auth');
 Route::resource('/venue', 'venueController')->middleware('auth');
 Route::resource('/timetable', 'timetableController')->middleware('auth');
+Route::resource('/report', 'reportController')->middleware('auth');
 //Route::resource('/schedule', 'scheduleController')->middleware('auth');
 
 
