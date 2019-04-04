@@ -14,9 +14,9 @@ class pdfController extends Controller
     public function generatePDF(){
 
         
-        $data = ["title" => "welcome to PDF"];
-        $pdf  = PDF::loadView('ticketout', $data);
 
-        return $pdf->download('newoneshere.pdf');
+        $pdf  = PDF::loadView('ticketout');
+
+        return $pdf->download('ticketout.pdf');
     }
 }

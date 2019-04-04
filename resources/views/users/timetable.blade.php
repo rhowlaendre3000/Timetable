@@ -38,11 +38,14 @@
 		 
 	</div>
 	<div class="col-sm-9 col-sm-offset-3"> 
-
+	<p>Programme Code : {{ $users->programme->initials }}</p>
 <div class="card ">
 		
 <div class="card-header">
-			  Timetable
+			
+			  Timetable 
+			  <h5> </h5>
+			 
 	  </div>
 		<div class="card-body">
 			
@@ -97,7 +100,9 @@
 					</table>
 					
 				</div>
-
+				<div class="form-group">
+    <a href="{{action('timetableController@pdf',$users->id)}}"> <input type="button" class="btn btn-success" value="Download"></a>
+				</div>
 				
 				<div class="text-center">
 				
@@ -171,7 +176,9 @@
 					
 				</div>
 
-				
+				<div class="form-group">
+    <a href="{{action('timetableController@pdf',$users->id)}}"> <input type="button" class="btn btn-success" value="Download"></a>
+				</div>
 				<div class="text-center">
 				
 				</div>

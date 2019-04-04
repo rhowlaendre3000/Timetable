@@ -21,16 +21,17 @@
   <div class="col-sm-6">
   <div class="card-body">
     <h5 class="card-title"></h5>
-    <div class="card-text">NAME : {{$profile->name}}</div>
+    <div class="card-text" style="color:black;">NAME : {{$profile->name}}</div>
    
   </div>
 </div>
 
 
+
 <div class="col-sm-6">
   <div class="card-body">
     <h5 class="card-title"></h5>
-    <div class="card-text">STUDENT ID :{{$profile->studentid}} </div>
+    <div class="card-text" style="color:black;">STUDENT ID :{{$profile->studentid}} </div>
    
   </div>
 </div>
@@ -45,7 +46,7 @@
   <div class="col-sm-6">
   <div class="card-body">
     <h5 class="card-title"></h5>
-    <div class="card-text">EMAIL : {{$profile->email}}</div>
+    <div class="card-text" style="color:black;">EMAIL : {{$profile->email}}</div>
    
   </div>
 </div>
@@ -54,7 +55,7 @@
 <div class="col-sm-6">
   <div class="card-body">
     <h5 class="card-title"></h5>
-    <div class="card-text">LEVEL: {{$profile->level}}</div>
+    <div class="card-text" style="color:black;">LEVEL: {{$profile->level}}</div>
    
   </div>
 </div>
@@ -69,7 +70,7 @@
   <div class="col-sm-6">
   <div class="card-body">
     <h5 class="card-title"></h5>
-    <div class="card-text">PROGRAMME : {{$profile->programmename}}</div>
+    <div class="card-text" style="color:black;">PROGRAMME : {{$profile->programmename}}</div>
    
   </div>
 </div>

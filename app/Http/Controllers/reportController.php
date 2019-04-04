@@ -19,9 +19,11 @@ class reportController extends Controller
     public function index()
     {
         //
-        $user = new User;
-        
-        return view('users.report');
+       // $user = new User;
+        $user=User::all();
+        $programme=Programme::all();
+        $course=Course::all();
+        return view('users.report')->with('user',$user)->with('programme', $programme)->with('course', $course);
     }
 
     /**

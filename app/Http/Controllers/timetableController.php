@@ -11,7 +11,7 @@ use App\Timetable;
 use App\Course;
 use App\Programme;
 use Carbon\Carbon;
-
+use PDF;
 class timetableController extends Controller
 {
     /**
@@ -167,5 +167,14 @@ class timetableController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function pdf($id){
+
+        $users=User::find(Auth::user()->id);
+        $programme=Programme::find($id);
+        $pdf = PDF::loadView('users.pdf',compact('users','programme'));
+        return $pdf->download('invoice.pdf');
     }
 }

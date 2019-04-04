@@ -82,10 +82,11 @@
 					
 				</div>
 
-				
-				<div class="text-center">
-				
+				<div class="form-group">
+    <a href="{{action('timetableController@pdf',$users->id)}}"> <input type="button" class="btn btn-success" value="Download"></a>
 				</div>
+				
+				
 			
 				
 		
