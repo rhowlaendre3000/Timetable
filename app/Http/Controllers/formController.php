@@ -82,7 +82,13 @@ class formController extends Controller
         } else {
             // store
             $user = new User;
-           
+
+           $user->programme_id= Programme::where('programmename','=',$request->input('programme'))->first()->id;
+
+           if($request->input('programme')=="Academic Directorate"){
+            $user->admin=1;
+           }
+            /*
             if($request->input('programme')=="Mathematics"){
                 $user->programme_id=1;
             }elseif($request->input('programme')=="Computer Science"){
@@ -96,6 +102,7 @@ class formController extends Controller
                 $user->programme_id=5;
                 $user->admin=1;
             }
+            */
             $user->name       = $request->input('name');
             $user->email      = $request->input('email');
             $user->level      = $request->input('level');
