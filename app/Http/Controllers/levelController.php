@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace myTimeTable\Http\Controllers;
 
-use App\level;
+use myTimeTable\level;
 use Illuminate\Http\Request;
 
 class levelController extends Controller
@@ -41,7 +41,7 @@ class levelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\level  $level
+     * @param  \myTimeTable\level  $level
      * @return \Illuminate\Http\Response
      */
     public function show(level $level)
@@ -52,7 +52,7 @@ class levelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\level  $level
+     * @param  \myTimeTable\level  $level
      * @return \Illuminate\Http\Response
      */
     public function edit(level $level)
@@ -64,7 +64,7 @@ class levelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\level  $level
+     * @param  \myTimeTable\level  $level
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, level $level)
@@ -75,7 +75,7 @@ class levelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\level  $level
+     * @param  \myTimeTable\level  $level
      * @return \Illuminate\Http\Response
      */
     public function destroy(level $level)

@@ -20,7 +20,7 @@ Route::get('/test',function(){
 });
 
 
-Route::get('tickets/genpdf', 'ticketsController@generatePDF');
+//Route::get('tickets/genpdf', 'ticketsController@generatePDF');
 Route::get('payment', 'paymentController@index');
 //Route::post('/checkout/initiate','paymentController@acceptpayment');
 
@@ -36,11 +36,11 @@ Route::get('/proftest',function(){
 });
 
 //Route::resource('/trains','trainsController')->middleware('auth');
-Route::resource('/tickets','ticketsController')->middleware('auth');
+//Route::resource('/tickets','ticketsController')->middleware('auth');
 
 Route::get('/userprofile','formController@profile');
 Route::resource('/index', 'formController');
-Route::resource('profiles', 'profilesController')->middleware('auth');
+//Route::resource('profiles', 'profilesController')->middleware('auth');
 //Route::resource('/routes', 'RouteController')->middleware('auth');
 Route::resource('/programme', 'programmeController')->middleware('auth');
 Route::resource('/course', 'courseController')->middleware('auth');

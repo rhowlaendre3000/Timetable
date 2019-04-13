@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace myTimeTable\Http\Controllers\Auth;
 
 use Auth;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use myTimeTable\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller

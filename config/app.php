@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Selfploy'),
+    'name' => env('APP_NAME', 'myTimeTable'),
 
     /*
     |--------------------------------------------------------------------------
@@ -157,11 +157,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        myTimeTable\Providers\AppServiceProvider::class,
+        myTimeTable\Providers\AuthServiceProvider::class,
+        // myTimeTable\Providers\BroadcastServiceProvider::class,
+        myTimeTable\Providers\EventServiceProvider::class,
+        myTimeTable\Providers\RouteServiceProvider::class,
 
     ],
 

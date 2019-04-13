@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Providers;
+namespace myTimeTable\Providers;
 use Illuminate\Support\Facades\Schema;
 
 use Illuminate\Support\ServiceProvider;

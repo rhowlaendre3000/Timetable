@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace myTimeTable\Http\Controllers;
 
-use App\User;
+use myTimeTable\User;
 use Auth;
-use App\Programme;
-use App\Timetable;
-use App\Course;
+use myTimeTable\Programme;
+use myTimeTable\Timetable;
+use myTimeTable\Course;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -21,6 +21,7 @@ class courseController extends Controller
     {
         //
         
+        $course=Course::all();
         
         return view('users.course', compact('course'));
     }
@@ -33,8 +34,9 @@ class courseController extends Controller
     public function create()
     {
         //
+        $course=Course::paginate(3);
         $programme=Programme::all();
-        return view('users.course')->with(compact('programme'));
+        return view('users.course')->with(compact('programme'))->with(compact('course'));
     }
 
     /**
@@ -108,7 +110,7 @@ class courseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Course  $course
+     * @param  \myTimeTable\Course  $course
      * @return \Illuminate\Http\Response
      */
     public function show(Course $course)
@@ -119,7 +121,7 @@ class courseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Course  $course
+     * @param  \myTimeTable\Course  $course
      * @return \Illuminate\Http\Response
      */
     public function edit(Course $course)
@@ -131,7 +133,7 @@ class courseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Course  $course
+     * @param  \myTimeTable\Course  $course
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Course $course)
@@ -142,7 +144,7 @@ class courseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Course  $course
+     * @param  \myTimeTable\Course  $course
      * @return \Illuminate\Http\Response
      */
     public function destroy(Course $course)

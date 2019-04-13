@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace myTimeTable\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use App\Course;
-use App\Timetable;
-use App\User;
-use App\Programme;
+use myTimeTable\Course;
+use myTimeTable\Timetable;
+use myTimeTable\User;
+use myTimeTable\Programme;
 
 class reportController extends Controller
 {

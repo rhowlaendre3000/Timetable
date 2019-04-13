@@ -1,11 +1,11 @@
 <?php
-namespace App\Http\Controllers;
+namespace myTimeTable\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
-use App\User;
+use myTimeTable\User;
 use Auth;
-use App\Programme;
-use App\Course;
+use myTimeTable\Programme;
+use myTimeTable\Course;
 
 
 class formController extends Controller
@@ -150,7 +150,8 @@ class formController extends Controller
     {
         //
         $user=User::find($id);
-        return view('users.update')->with('user',$user);
+        $programme=Programme::all();
+        return view('users.update')->with('user',$user)->with('programme', $programme);
     }
 
     /**
@@ -163,10 +164,14 @@ class formController extends Controller
     public function update(Request $request, $id)
     {
         $user=User::find($id);
+        $status="updated";
         $validator = Validator::make($request->all(), [
             'name'     => 'required|min:4',
             'email'    => 'required|email|unique:users',
-            'password' => 'required|min:8',
+            'level'    => 'required',
+            'programme'      => 'required',
+            'studentid'=>  'required',
+            'password' => 'required|string|min:6|confirmed',
         ]);
 
         if ($validator->fails()) {
@@ -177,9 +182,18 @@ class formController extends Controller
         else{
 
 
-            $user->name=$request->input('name');
-            $user->email=$request->input('email');
-            $user->password=bcrypt($request->input('password'));
+            $user->programme_id= Programme::where('programmename','=',$request->input('programme'))->first()->id;
+
+           if($request->input('programme')=="Academic Directorate"){
+            $user->admin=1;
+           }
+         
+            $user->name       = $request->input('name');
+            $user->email      = $request->input('email');
+            $user->level      = $request->input('level');
+            $user->programmename   = $request->input('programme');
+            $user->studentid   = $request->input('studentid');
+            $user->password    = $request->input('password');
             $user->save();
         
             session()->flash('status', 'User '.$status.'d successfully');

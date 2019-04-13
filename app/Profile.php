@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace myTimeTable;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,6 +13,6 @@ class Profile extends Model
 
 
     public function user(){
-        return $this->BelongsTo('App\User');
+        return $this->BelongsTo('myTimeTable\User');
     }
 }

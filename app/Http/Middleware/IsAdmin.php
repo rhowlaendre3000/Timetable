@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace myTimeTable\Http\Middleware;
 
 use Closure;
 

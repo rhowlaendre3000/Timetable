@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
 	@if(session()->has('status'))
 		<p class="alert alert-info">
 			{{	session()->get('status') }}
@@ -12,7 +12,7 @@
        
     
 
-         <div class="col-sm-6 col-sm-offset-3"> 	
+         <div class="col-sm-4 col-sm-offset-3"> 	
         <div class="card">
         <div class="card-header">
     			Add New Courses
@@ -28,43 +28,47 @@
             </div>
       </div>
 
-<div class="col-sm-6 col-sm-offset-3"> 	
+<div class="col-sm-8 col-sm-offset-3"> 	
         <div class="card">
         <div class="card-header">
-    			Trains Available
+    			Courses Available
     	</div>
     		<div class="card-body">
-                <div class="table-responsive">
+                <div class="table">
                     <table class="table table-bordered">
                         <thead>
                        
                             <tr>
-                                <th>Name</th>
-                                <th>Type</th>
-                                <th>Total</th>
+                                <th>Title</th>
+                                <th>Code</th>
+                                <th>Lecturer</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
 
                     <tbody>
-                    
+                    @foreach($course as $courses)
                         <tr></tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{$courses->coursetitle}}</td>
+                        <td>{{$courses->coursecode}}</td>
+                        <td>{{$courses->lecturer}}</td>
                         <td><a href="" class="btn btn-success btn-xs">Edit</a>
 									
-									<form action="  " method="POST" style="display:inline-block">
+									<form action=" " method="POST" style="display:inline-block">
 										{{ csrf_field() }}
 										{{ method_field('DELETE') }}
 										<button class="btn btn-danger btn-xs">
 											<span>DELETE</span>
 										</button>
 									</form></td>
+                                    
+                                    
+                   @endforeach
                    
                     </tbody>
-                    </table>
 
+                    </table>
+                    {{$course->links()}}
                 </div>
                 
 					

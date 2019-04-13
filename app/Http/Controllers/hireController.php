@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace myTimeTable\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Profile;
-use App\User;
+use myTimeTable\Profile;
+use myTimeTable\User;
 use Auth;
 class hireController extends Controller
 {

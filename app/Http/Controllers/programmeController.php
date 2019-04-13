@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace myTimeTable\Http\Controllers;
 
 
 use Auth;
 use Illuminate\Support\Facades\Validator;
 
-use App\User;
-use App\Programme;
+use myTimeTable\User;
+use myTimeTable\Programme;
 use Illuminate\Http\Request;
 
 class programmeController extends Controller
@@ -95,7 +95,7 @@ class programmeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Programme  $programme
+     * @param  \myTimeTable\Programme  $programme
      * @return \Illuminate\Http\Response
      */
     public function edit(Programme $programme)
@@ -107,7 +107,7 @@ class programmeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Programme  $programme
+     * @param  \myTimeTable\Programme  $programme
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Programme $programme)
@@ -118,7 +118,7 @@ class programmeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Programme  $programme
+     * @param  \myTimeTable\Programme  $programme
      * @return \Illuminate\Http\Response
      */
     public function destroy(Programme $programme)

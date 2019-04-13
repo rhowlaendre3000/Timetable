@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace myTimeTable\Http\Controllers;
 
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Auth;
-use App\User;
-use App\Timetable;
-use App\Course;
-use App\Programme;
+use myTimeTable\User;
+use myTimeTable\Timetable;
+use myTimeTable\Course;
+use myTimeTable\Programme;
 use Carbon\Carbon;
 use PDF;
 class timetableController extends Controller

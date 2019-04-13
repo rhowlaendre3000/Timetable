@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace myTimeTable\Http\Controllers;
 
-use App\Datetime;
+use myTimeTable\Datetime;
 use Illuminate\Http\Request;
 
 class datetimeController extends Controller
@@ -41,7 +41,7 @@ class datetimeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Datetime  $datetime
+     * @param  \myTimeTable\Datetime  $datetime
      * @return \Illuminate\Http\Response
      */
     public function show(Datetime $datetime)
@@ -52,7 +52,7 @@ class datetimeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Datetime  $datetime
+     * @param  \myTimeTable\Datetime  $datetime
      * @return \Illuminate\Http\Response
      */
     public function edit(Datetime $datetime)
@@ -64,7 +64,7 @@ class datetimeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Datetime  $datetime
+     * @param  \myTimeTable\Datetime  $datetime
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Datetime $datetime)
@@ -75,7 +75,7 @@ class datetimeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Datetime  $datetime
+     * @param  \myTimeTable\Datetime  $datetime
      * @return \Illuminate\Http\Response
      */
     public function destroy(Datetime $datetime)
