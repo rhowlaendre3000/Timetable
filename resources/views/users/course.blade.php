@@ -52,9 +52,9 @@
                         <td>{{$courses->coursetitle}}</td>
                         <td>{{$courses->coursecode}}</td>
                         <td>{{$courses->lecturer}}</td>
-                        <td><a href="" class="btn btn-success btn-xs">Edit</a>
+                        <td><a href="{{ route('course.edit', $courses->id) }}" class="btn btn-success btn-xs">Edit</a>
 									
-									<form action=" " method="POST" style="display:inline-block">
+									<form action="{{ route('course.destroy', $courses->id) }}" method="POST" style="display:inline-block">
 										{{ csrf_field() }}
 										{{ method_field('DELETE') }}
 										<button class="btn btn-danger btn-xs">

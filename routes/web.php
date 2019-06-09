@@ -72,7 +72,7 @@ Route::group(['middleware'=>['auth','web']], function(){
         return view('users.dashboard');
     });
     Route::get('/all', function(){
-        $users['users']=\App\User::paginate(10);
+        $users['users']=myTimeTable\User::paginate(10);
 
         return view('users.all',$users);
     });

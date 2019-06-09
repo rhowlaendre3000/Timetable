@@ -27,10 +27,10 @@ class timetableController extends Controller
       
         $users=User::find(Auth::user()->id);
         
-        
+        //$programme=Programme::all();
 
         return view('users.timetable')->with(compact('users'))
-                                      ->with(compact('course'));
+                                      ->with(compact('programme'));
     }
 
     /**
@@ -144,6 +144,9 @@ class timetableController extends Controller
     public function edit($id)
     {
         //
+        $programme=Programme::find($id);
+
+        return view('users.timetable', compact('programme'));
     }
 
     /**

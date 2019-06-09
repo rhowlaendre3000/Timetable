@@ -5,24 +5,18 @@
  <div class="container-fluid">
  
   <div class="row">
-    <div class="col-sm-4" style="background-color:lavender;">
+    <div class="col-sm-6" style="background-color:lavender;">
     		<h4><b>CONTACT</b></h4>
 
         <h5><b style="color:#23527c;">Computer Science Department</b></h5>
 
-        <p><b style="color:#23527c;">University of Ghana</b></p>
-       <p style="color:#23527c;"> <b>Legon</b> </p>
+        <p><b style="color:#23527c;">Accra Technical University</b></p>
+       <p style="color:#23527c;"> <b>Accra,Ghana</b> </p>
 
 
     </div>
-    <div class="col-sm-4" style="background-color:lavender;">
-		  	  	
-    		<h4><b>QUICK LINKS</b></h4>
-        <p><a href=""><b>Home</b></a></p>
-        <p><a href=""><b>About Us</b></a></p>
-        <p><a href=""><b>Register</b></a></p>
-    </div>
-    <div class="col-sm-4"  style="padding-right: 30px; padding-left: 15px; background-color: lavender;">
+   
+    <div class="col-sm-6"  style="padding-right: 30px; padding-left: 15px; background-color: lavender;">
     		<h4><b>SOCIAL NETWROKS</b></h4>
         <div>
         <ul class="social">

@@ -83,7 +83,7 @@ class formController extends Controller
             // store
             $user = new User;
 
-           $user->programme_id= Programme::where('programmename','=',$request->input('programme'))->first()->id;
+           $user->programme_id= Programme::where('name','=',$request->input('programme'))->first()->id;
 
            if($request->input('programme')=="Academic Directorate"){
             $user->admin=1;
@@ -106,7 +106,7 @@ class formController extends Controller
             $user->name       = $request->input('name');
             $user->email      = $request->input('email');
             $user->level      = $request->input('level');
-            $user->programmename   = $request->input('programme');
+            $user->programmename  = $request->input('programme');
             $user->studentid   = $request->input('studentid');
             $user->password    = $request->input('password');
             

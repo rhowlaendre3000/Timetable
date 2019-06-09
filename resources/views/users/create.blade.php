@@ -2,11 +2,16 @@
 
 @section('content')
 <div class="container">
+
+
+
 	@if(session()->has('status'))
 		<p class="alert alert-info">
 			{{	session()->get('status') }}
 		</p>
     @endif
+    
+
     
    <div class="row">
        <div class="col-sm-3">

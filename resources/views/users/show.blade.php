@@ -53,7 +53,7 @@
 								
 								<th>Course</th>
 								<th>Course Code</th>
-                                <th>Lecturer</th>
+                                <th>Supervisor</th>
 								<th>Time</th>
 								<th>Venue</th>
 								<th>Date</th>

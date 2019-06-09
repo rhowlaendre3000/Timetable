@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'myTimeTable') }}</title>
+    <title>{{ config('app.name', 'MyTimeTable') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -25,10 +25,12 @@
 
 <body >
     <div id="app" style="margin-bottom:30px;">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="margin-bottom:20px; background-color:#2d3037;" >
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="margin-bottom:20px; background-color:#1f497d;" >
             <div class="container" >
+            <img src="{{asset('img/avatar.png')}}" style="height:70px;" />
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <h3 style="color:white;"><strong>{{ env('app.name', 'myTimeTable') }}</strong></h3>
+              
+                    <h3 style="color:white;"><strong>{{ env('app.name', 'Accra Technical University') }}</strong></h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

@@ -110,23 +110,29 @@ class courseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \myTimeTable\Course  $course
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Course $course)
+    public function show($id)
     {
         //
+        $course=Course::find($id);
+        return view('users.', compact('course'));
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \myTimeTable\Course  $course
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit($id)
     {
         //
+        $course=Course::find($id);
+        $programme=Programme::all();
+        return view('users.editcourse')->with(compact('course'))->with(compact('programme'));
     }
 
     /**
@@ -136,19 +142,51 @@ class courseController extends Controller
      * @param  \myTimeTable\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, $id)
     {
         //
-    }
+        $course=Course::find($id);
+        $status="updated";
+        $rules=[
+            'title'=>'required|string',
+            'code'=>'required|string',
+            'lecturer'=>'required|string'
+        ];
+
+        $validator=Validator::make($request->all(), $rules);
+
+        if($validator->fails()){
+            return redirect('course/'. $id . '/edit')->withErrors($validator)->withInput();
+        }else{
+            $course->coursetitle=$request->input('title');
+            $course->coursecode=$request->input('code');
+            $course->lecturer=$request->input('lecturer');
+
+            $course->programme_id=Programme::where('name','=',$request->input('programme'))->first()->id;
+            $course->save();
+
+            session()->flash('status', 'Course '.$status.'d successfully');
+                return redirect(route('course'));
+        }
+
+        }
+    
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \myTimeTable\Course  $course
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy($id)
     {
         //
+        $course=Course::find($id);
+        if($course->delete()){
+            session()->flash('status', 'Course deleted successfully');
+        }else{
+            session()->flash('status', 'Unable to delete Course');
+        }
+        return back();
     }
 }

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'myTimeTable'),
+    'name' => env('APP_NAME', 'MyTimeTable'),
 
     /*
     |--------------------------------------------------------------------------

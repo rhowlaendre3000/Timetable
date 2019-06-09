@@ -18,18 +18,17 @@
          <div class="col-sm-5 col-sm-offset-3"> 	
         <div class="card">
         <div class="card-header">
-    			Edit Route
+    			Edit Course
     	</div>
     		<div class="card-body">
-                @foreach($route as $routes)
-                <form method="POST" action="{{ action('RouteController@update', $routes->id)}}">
+                
+                <form method="POST" action="{{ action('courseController@update', $course->id)}}">
                 {{ csrf_field() }}
                 {{ method_field('PATCH') }}
-                @include('includes.venueform')
+                @include('includes.courseform')
                 </form>
 					
 </div>	
-@endforeach
             </div>
       </div>
 
