@@ -48,7 +48,8 @@ class programmeController extends Controller
         //
 
         $rules=[
-                'name'=>'required|string'
+                'name'=>'required|alpha',
+                'initials'=>'required|alpha'
                 
         ];
 

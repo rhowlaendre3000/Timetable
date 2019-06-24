@@ -47,10 +47,17 @@
                         </thead>
 
                     <tbody>
+                        @foreach($programme as $programmes)
+                            {{$programmes->initials}}
+                        @endforeach
                     @foreach($course as $courses)
                         <tr></tr>
                         <td>{{$courses->coursetitle}}</td>
-                        <td>{{$courses->coursecode}}</td>
+                      
+                        <td>                      
+                     {{$courses->coursecode}}
+                    </td>
+                      
                         <td>{{$courses->lecturer}}</td>
                         <td><a href="{{ route('course.edit', $courses->id) }}" class="btn btn-success btn-xs">Edit</a>
 									

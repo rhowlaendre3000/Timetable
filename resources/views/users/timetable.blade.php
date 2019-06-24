@@ -106,7 +106,7 @@
 					
 					
 					
-						@foreach($users->programme->course->where("level_id",'==', substr($users->programme->course->last()->coursecode,0,1)) as $user)
+						@foreach($users->programme->course->where("level_id",'==', substr($users->programme->course->first()->coursecode,0,1)) as $user)
 						
 							<tr>
 								
@@ -116,7 +116,6 @@
 								
                                 <td>{{$user->coursetitle}}</td>
                                 <td>{{$user->coursecode}}</td>
-                                <td>{{$user->lecturer}}</td>
 								
 								@isset($user->timetable->timefrom)
 								<td>{{ $user->timetable->timefrom }} to {{$user->timetable->timeto}}</td>

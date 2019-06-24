@@ -20,10 +20,10 @@ class courseController extends Controller
     public function index()
     {
         //
-        
+       $programme=Programme::all();
         $course=Course::all();
         
-        return view('users.course', compact('course'));
+        return view('users.course')->with(compact('programme'))->with(comapact('course'));
     }
 
     /**
@@ -50,7 +50,7 @@ class courseController extends Controller
         //
         $rules=[
             'title'=>'required|string',
-            'code'=>'required|string',
+            'code'=>'required|alpha_num',
             'lecturer'=>'required|string'
         ];
 
@@ -86,13 +86,13 @@ class courseController extends Controller
 
            // $course->programme_id=Programme::all()->last()->id;
 
-            if(substr($course->coursecode,0,1)==1){
+            if(substr($course->coursecode,3,1)==1){
                 $course->level_id=1;
-            }elseif(substr($course->coursecode,0,1)==2){
+            }elseif(substr($course->coursecode,3,1)==2){
                 $course->level_id=2;
-            }elseif(substr($course->coursecode,0,1)==3){
+            }elseif(substr($course->coursecode,3,1)==3){
                 $course->level_id=3;
-            }elseif(substr($course->coursecode,0,1)==4){
+            }elseif(substr($course->coursecode,3,1)==4){
                 $course->level_id=4;
             }
 
@@ -149,7 +149,7 @@ class courseController extends Controller
         $status="updated";
         $rules=[
             'title'=>'required|string',
-            'code'=>'required|string',
+            'code'=>'required|alpha_num',
             'lecturer'=>'required|string'
         ];
 
@@ -158,15 +158,29 @@ class courseController extends Controller
         if($validator->fails()){
             return redirect('course/'. $id . '/edit')->withErrors($validator)->withInput();
         }else{
+
+
             $course->coursetitle=$request->input('title');
             $course->coursecode=$request->input('code');
             $course->lecturer=$request->input('lecturer');
 
             $course->programme_id=Programme::where('name','=',$request->input('programme'))->first()->id;
+
+            if(substr($course->coursecode,3,1)==1){
+                $course->level_id=1;
+            }elseif(substr($course->coursecode,3,1)==2){
+                $course->level_id=2;
+            }elseif(substr($course->coursecode,3,1)==3){
+                $course->level_id=3;
+            }elseif(substr($course->coursecode,3,1)==4){
+                $course->level_id=4;
+            }
+
+
             $course->save();
 
             session()->flash('status', 'Course '.$status.'d successfully');
-                return redirect(route('course'));
+                return redirect(route('course.create'));
         }
 
         }

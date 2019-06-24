@@ -25,7 +25,30 @@
                 <form method="POST" action="{{ action('courseController@update', $course->id)}}">
                 {{ csrf_field() }}
                 {{ method_field('PATCH') }}
-                @include('includes.courseform')
+                <div class="form-group">
+                              <label for="programme">Programme</label><em>*</em>
+                              <select type="text" name="programme" class="form-control" id="title" required>
+                              @foreach($programme as $programmes)
+                              <option> {{ $programmes->name }}</option>
+                              @endforeach
+                              </select>
+                              </div>
+                              <div class="form-group">
+                              <label for="name">Course Title</label><em>*</em>
+                              <input type="text" name="title" value="{{$course->coursetitle}}" class="form-control" id="title" required>
+                              </div>
+                              <div class="form-group">
+                              <label for="code">Course Code</label><em>*</em>
+                              <input type="text" value="{{$course->coursecode}}" name="code" class="form-control" id="code" required>
+                              </div>
+                              <div class="form-group">
+                              <label for="lecturer">Course Lecturer</label><em>*</em>
+                              <input type="text" value="{{$course->lecturer}}" name="lecturer" class="form-control" id="lecturer" required>
+                              </div>
+                              <div class="form-group">
+                              <input type="submit" class="btn btn-success" value="submit">
+                              </div>
+
                 </form>
 					
 </div>	
